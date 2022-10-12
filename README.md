@@ -1,7 +1,7 @@
-
-# Difference Date PHP
+# Selisih Tanggal PHP
 
 Cara yang dipake untuk menghitung selisih waktu
+
 
 ## Penggunaan
 
@@ -11,6 +11,7 @@ Biasanya penggunaan format selisih tanggal ini dipake untuk :
 - Menghitung biaya berdasarkan durasi
 - Waktu login
 - Log aktivitas
+
 
 ## Selisih Menghitung 2 waktu (Format Jam)
 
@@ -40,6 +41,9 @@ if ($raw->endDate == null) { //jika tidak ada waktu berakhir maka...
     $hours = strval(count($hours)) < 2 ? '0' + $hours : $hours;
 
     $result = $hours - $a . ":" . $minutes . ":" . $second;
+
+    //hasil output :
+    02:59:59
 }
 ```
 
@@ -52,5 +56,24 @@ $endDate = strtotime($request->end_date);
 $datediff = $endDate - $startDate;
 
 $result = round($datediff / (60 * 60 * 24));
+
+//hasil output :
+234 => Bisa dikasih output lain biar menampilkan hasil lengkapnya
 ```
 
+## Selisih Menghitung 2 waktu (Format Tanggal)
+
+```php
+$startDate = new DateTime($request->start_date);
+$endDate = new DateTime($request->end_date);
+$datediff = $startDate->diff($endDate);
+
+echo 'Selisih: '.$difference->y.' tahun, ' 
+                   .$difference->m.' bulan, ' 
+                   .$difference->d.' hari';
+
+print_r($datediff);
+
+//hasil output :
+Selisih: 0 years, 1 months, 2 days
+```
