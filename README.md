@@ -3,6 +3,14 @@
 
 Cara yang dipake untuk menghitung selisih waktu
 
+## Penggunaan
+
+Biasanya penggunaan format selisih tanggal ini dipake untuk :
+
+- Durasi waktu
+- Menghitung biaya berdasarkan durasi
+- Waktu login
+- Log aktivitas
 
 ## Selisih Menghitung 2 waktu (Format Jam)
 
